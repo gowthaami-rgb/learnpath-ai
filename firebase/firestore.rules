@@ -1,0 +1,15 @@
+rules_version = '2';
+
+// Deploy with: firebase deploy --only firestore:rules
+// Or paste directly into Firebase Console > Firestore Database > Rules.
+//
+// This restricts every user to reading/writing only their own document at
+// /users/{their own uid} — no user can see or modify another user's data.
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
