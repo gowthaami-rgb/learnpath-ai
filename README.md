@@ -195,3 +195,4 @@ Dark mode is available via the toggle in the navbar/Settings page (Tailwind
 - Well-commented code throughout — see comments in `AppContext.jsx` and
   `firebase.js` for exactly how the demo-mode/real-mode switch works.
 
+# learnpath-ai
